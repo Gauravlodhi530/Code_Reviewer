@@ -10,6 +10,7 @@ import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 
+
 function App() {
   const [code, setCode] = useState(` function sum() {
   return 1 + 1
@@ -24,7 +25,7 @@ function App() {
       return setReview("Please enter the code...");
     }
     try {
-      const response = await axios.post("http://localhost:3000/ai/get-review", {
+      const response = await axios.post(`https://code-reviewer-g.vercel.app/ai/get-review`, {
         code,
       });
       setReview(response.data);
