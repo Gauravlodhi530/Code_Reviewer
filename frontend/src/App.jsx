@@ -10,12 +10,12 @@ import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 
-
 function App() {
   const [code, setCode] = useState(` function sum() {
   return 1 + 1
 }`);
   const [review, setReview] = useState("");
+  const [isLoading, steIsLoading] = useState(false);
 
   useEffect(() => {
     prism.highlightAll();
@@ -24,14 +24,21 @@ function App() {
     if (code.trim() === "") {
       return setReview("Please enter the code...");
     }
+    steIsLoading(true);
     try {
-      const response = await axios.post(`https://code-reviewer-g.vercel.app/ai/get-review`, {
-        code,
-      });
+      const response = await axios.post(
+        `https://code-reviewer-g.vercel.app/ai/get-review`,
+        {
+          code,
+        }
+      );
       setReview(response.data);
+      
     } catch (error) {
       console.error("Error reviewing code:", error);
       setReview("Something went wrong while getting the review.");
+    } finally{
+      steIsLoading(false)
     }
   }
 
@@ -73,9 +80,11 @@ function App() {
             </div>
           </div>
           <div className="right">
-            
+            {isLoading ? (
+              <h3>Loading....</h3>
+            ) : (
               <Markdown rehypePlugins={[rehypeHighlight]}>{review}</Markdown>
-            
+            )}
           </div>
         </section>
       </main>
