@@ -62,7 +62,7 @@ npm run dev
 
 - **Frontend:** React.js, Vite, PrismJS, Tailwind CSS
 - **Backend:** Node.js, Express, Axios
-- **AI Integration:** HuggingFace or any custom API endpoint (configurable in backend)
+- **AI Integration:** Gemini API or any custom API endpoint (configurable in backend)
 
 ## 🙋‍♂️ Author
 
