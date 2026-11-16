@@ -84,11 +84,19 @@ Here’s a solid system instruction for your AI code reviewer:
 
  }); 
 
-console.log(process.env.GEMINI_API_KEY);
+if (!process.env.GEMINI_API_KEY) {
+  console.error('ERROR: GEMINI_API_KEY is not set in .env file');
+}
+
 async function generateContent(prompt) {
+  try {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = await response.text();
     return text;
+  } catch (error) {
+    console.error('Error generating content:', error.message);
+    throw error;
+  }
 }
 export default generateContent;

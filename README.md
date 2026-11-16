@@ -1,79 +1,126 @@
+# AI Code Reviewer
 
-# 🤖 AI Code Reviewer
+> A free, browser-based tool that provides instant AI-powered code reviews.
+> Paste any code snippet and receive detailed feedback on bugs, performance, security, style, and best practices — powered by Google Gemini 2.0 Flash.
 
-AI Code Reviewer is a web-based application that allows users to paste their code and receive instant AI-generated feedback. It is built using **React.js** (Vite) on the frontend and **Node.js** with **Express** on the backend.
+🌐 **Live:** https://code-reviewer-g.vercel.app
 
-## 🧠 Features
+---
 
-- 📄 Real-time code review via AI
-- 🧠 Backend-powered review system using AI APIs
-- 🌙 Dark-mode themed code editor
-- 🎨 Syntax highlighting using PrismJS
-- 🚀 Modern UI built with React and Tailwind CSS
+## What it does
 
-## 📁 Folder Structure
+AI Code Reviewer acts as a senior software engineer (7+ years of experience). You paste code, it reviews it. The review covers:
+
+- **Bug detection** — runtime errors, logic flaws
+- **Performance** — slow patterns, costly operations
+- **Security** — XSS, injection, insecure API usage, unsafe patterns
+- **Code style** — naming conventions, formatting, readability
+- **Best practices** — DRY, SOLID principles, modern idioms
+- **Refactoring** — simplified alternatives with improved code examples
+- **Documentation** — suggestions for comments and docstrings
+
+## Supported languages
+
+JavaScript, TypeScript, Python, Java, C++, C#, Go, Rust, PHP, Ruby, Swift, Kotlin, and any other language a large language model understands.
+
+## How to use (web)
+
+1. Open https://code-reviewer-g.vercel.app/
+2. Paste code into the left editor panel
+3. Click **Review Code**
+4. Read the structured AI review in the right panel
+
+## API
+
+The backend exposes a single public endpoint:
 
 ```
-Code_Reviewer/
-│
-├── backend/                  # Node.js backend (Express + AI logic)
-│   └── index.ts             # Main server file
-│
-├── frontend/                 # React frontend
-│   ├── src/
-│   │   ├── App.jsx          # Main application component
-│   │   └── components/      # Custom UI components
-│   └── public/
-│
-├── README.md
-└── package.json
+POST https://code-reviewer-g.vercel.app/ai/get-review
+Content-Type: application/json
+
+{ "code": "<your code string>" }
 ```
 
-## 🚀 Getting Started
+**Response:** plain-text Markdown string containing the structured review.
 
-### Step 1: Clone the repository
+OpenAPI spec: https://code-reviewer-g.vercel.app/.well-known/openapi.json
+
+## AI tool discovery files
+
+| File | Purpose |
+|---|---|
+| `/llms.txt` | Short site summary for LLM crawlers |
+| `/llms-full.txt` | Full site content for LLM crawlers |
+| `/sitemap.xml` | Sitemap for search engines and crawlers |
+| `/robots.txt` | Crawler permissions (GPTBot, ClaudeBot, PerplexityBot all allowed) |
+| `/.well-known/ai-plugin.json` | ChatGPT plugin / AI agent discovery manifest |
+| `/.well-known/openapi.json` | OpenAPI 3.1 spec for the review API |
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | React 19, Vite, react-simple-code-editor, PrismJS, react-markdown |
+| Backend | Node.js, Express |
+| AI model | Google Gemini 2.0 Flash (`@google/generative-ai`) |
+| Hosting | Vercel (both frontend and backend) |
+
+## Folder structure
+
+```
+Code Reviewer/
+├── backend/
+│   ├── server.js
+│   └── src/
+│       ├── app.js
+│       ├── controllers/ai.controller.js
+│       ├── routes/ai.route.js
+│       └── services/ai.service.js
+├── frontend/
+│   ├── public/
+│   │   ├── llms.txt              ← AI crawler summary
+│   │   ├── llms-full.txt         ← AI crawler full content
+│   │   ├── robots.txt            ← crawler permissions
+│   │   ├── sitemap.xml           ← page index
+│   │   ├── ads.txt               ← AdSense verification
+│   │   └── .well-known/
+│   │       ├── ai-plugin.json    ← ChatGPT plugin manifest
+│   │       └── openapi.json      ← OpenAPI 3.1 spec
+│   └── src/
+│       ├── components/
+│       │   ├── Navbar.jsx
+│       │   ├── Footer.jsx
+│       │   └── SEOHead.jsx
+│       └── pages/
+│           ├── Home.jsx
+│           ├── About.jsx
+│           ├── Privacy.jsx
+│           ├── Terms.jsx
+│           └── NotFound.jsx
+└── README.md
+```
+
+## Local development
 
 ```bash
-git clone https://github.com/Gauravlodhi530/Code_Reviewer.git
-cd Code_Reviewer
-```
-
-### Step 2: Install and run the backend
-
-```bash
+# Backend
 cd backend
 npm install
-npx nodemon index.ts
-```
+node server.js        # runs on http://localhost:3000
 
-> Make sure your backend runs on `http://localhost:3000`
-
-### Step 3: Install and run the frontend
-
-```bash
-cd ../frontend
+# Frontend
+cd frontend
 npm install
-npm run dev
+npm run dev           # runs on http://localhost:5173
 ```
 
-> Frontend runs on `http://localhost:5173`
+## Author
 
-## 🔧 Tech Stack
+**Gaurav Lodhi**
+- Email: gauravlodhi530@gmail.com
+- GitHub: https://github.com/Gauravlodhi530
+- LinkedIn: https://www.linkedin.com/in/gauravlodhi530
 
-- **Frontend:** React.js, Vite, PrismJS, Tailwind CSS
-- **Backend:** Node.js, Express, Axios
-- **AI Integration:** HuggingFace or any custom API endpoint (configurable in backend)
+## License
 
-## 🙋‍♂️ Author
-
-**Gaurav Lodhi**  
-📧 gauravlodhi530@gmail.com  
-🌐 [LinkedIn](https://www.linkedin.com/in/gauravlodhi530)
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
-## ⭐️ Support
-
-If you like this project, give it a ⭐️ on GitHub to show your support.
+MIT — open source and free to use.

@@ -1,0 +1,43 @@
+/* AdSlot — policy-compliant ad unit container */
+
+.adWrapper {
+  width: 100%;
+  /* Minimum 8px clearance from all interactive elements (buttons, links, editor).
+     AdSense placement policy: ads must not be placed so close to interactive content
+     that accidental clicks are likely. */
+  margin: 2rem 0;
+  padding: 0;
+}
+
+/* "Advertisement" label — required disclosure.
+   Must be visible, in readable font size, directly above the ad unit. */
+.adLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #475569;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  user-select: none;
+  pointer-events: none; /* prevents any interaction with the label itself */
+}
+
+/* Development / unconfigured state placeholder */
+.placeholder {
+  width: 100%;
+  min-height: 90px;
+  margin: 2rem 0;
+  background: #1a1d2e;
+  border: 1px dashed #2d3148;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderLabel {
+  font-size: 0.75rem;
+  color: #475569;
+  font-style: italic;
+}

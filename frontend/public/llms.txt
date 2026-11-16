@@ -1,0 +1,54 @@
+# AI Code Reviewer
+
+> A free, browser-based tool that provides instant AI-powered code reviews. Paste any code snippet and receive detailed feedback on bugs, performance, security, style, and best practices — powered by Google Gemini 2.0 Flash.
+
+## What this site does
+
+AI Code Reviewer lets developers submit code and receive a structured review from an AI acting as a senior engineer with 7+ years of experience. The review covers:
+
+- Bug detection and logic errors
+- Performance bottlenecks and optimisations
+- Security vulnerabilities (XSS, injection, unsafe patterns)
+- Code style, naming conventions, and formatting
+- DRY / SOLID principle adherence
+- Refactoring suggestions with improved code examples
+- Documentation and test coverage advice
+
+## Who it is for
+
+Developers of all skill levels who want a fast second opinion on their code before shipping to production, during code review, or while learning a new language.
+
+## Supported languages
+
+JavaScript, TypeScript, Python, Java, C++, C#, Go, Rust, PHP, Ruby, Swift, Kotlin, and any other language a large language model can understand.
+
+## How to use it
+
+1. Open https://code-reviewer-g.vercel.app/
+2. Paste or type code into the left editor panel
+3. Click "Review Code"
+4. Read the structured AI review in the right panel
+
+## Technology
+
+- Frontend: React 19, Vite, react-simple-code-editor, PrismJS, react-markdown
+- Backend: Node.js, Express, deployed on Vercel
+- AI model: Google Gemini 2.0 Flash via @google/generative-ai SDK
+
+## Pages
+
+- / — Main code editor and review interface
+- /about — Detailed description of the tool
+- /privacy — Privacy Policy (no code stored, AdSense cookies disclosed)
+- /terms — Terms of Service
+
+## Author
+
+Gaurav Lodhi
+Email: gauravlodhi530@gmail.com
+GitHub: https://github.com/Gauravlodhi530/Code_Reviewer
+LinkedIn: https://www.linkedin.com/in/gauravlodhi530
+
+## License
+
+MIT License — open source and free to use.

@@ -1,0 +1,463 @@
+/* ═══════════════════════════════════════════
+   Home page — AI Code Reviewer
+   AdSense policy: ads clearly separated from
+   interactive/navigation elements throughout.
+═══════════════════════════════════════════ */
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* ── Hero ─────────────────────────────── */
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heroBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #818cf8;
+  background: rgba(129, 140, 248, 0.1);
+  border: 1px solid rgba(129, 140, 248, 0.25);
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #f1f5f9;
+  letter-spacing: -0.02em;
+}
+
+.heading em {
+  color: #818cf8;
+  font-style: normal;
+}
+
+.sub {
+  font-size: 1.05rem;
+  color: #64748b;
+  max-width: 600px;
+  line-height: 1.75;
+}
+
+/* ── Editor layout ────────────────────── */
+.editorSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  min-height: 520px;
+}
+
+.panel {
+  background: #12151f;
+  border: 1px solid #1e2335;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background: #0d1017;
+  border-bottom: 1px solid #1e2335;
+}
+
+.panelLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.reviewReady {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #34d399;
+  letter-spacing: 0.04em;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+.dots span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #1e2335;
+}
+
+.editorWrap {
+  flex: 1;
+  overflow: auto;
+  background: #12151f;
+  min-height: 400px;
+}
+
+/* Review button row — clearly separated from editor */
+.reviewBtnRow {
+  padding: 0.75rem 1rem;
+  background: #0d1017;
+  border-top: 1px solid #1e2335;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reviewBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+
+.reviewBtn:hover:not(:disabled) {
+  background: #6366f1;
+  transform: translateY(-1px);
+}
+
+.reviewBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.reviewBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.reviewWrap {
+  flex: 1;
+  overflow: auto;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: #cbd5e1;
+}
+
+.reviewWrap h1,
+.reviewWrap h2,
+.reviewWrap h3 {
+  color: #e2e8f0;
+  margin: 1.1em 0 0.4em;
+}
+
+.reviewWrap p {
+  margin-bottom: 0.75em;
+}
+
+.reviewWrap ul,
+.reviewWrap ol {
+  padding-left: 1.4em;
+  margin-bottom: 0.75em;
+}
+
+.reviewWrap li {
+  margin-bottom: 0.3em;
+}
+
+.reviewWrap pre {
+  background: #0d1017;
+  border: 1px solid #1e2335;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin: 0.75em 0;
+}
+
+.reviewWrap code {
+  font-family: 'Fira Code', 'Fira Mono', monospace;
+  font-size: 0.84rem;
+}
+
+.reviewWrap :not(pre) > code {
+  background: #1a1d2e;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.84em;
+}
+
+/* Placeholder */
+.placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.placeholderIcon {
+  font-size: 2rem;
+}
+
+.placeholderText {
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Loading */
+.loader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+.loaderTitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.loaderSub {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #334155;
+  border-top-color: #818cf8;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+.spinnerLg {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #1e2335;
+  border-top-color: #818cf8;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Section shared styles ─────────────── */
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.sectionSub {
+  font-size: 0.95rem;
+  color: #64748b;
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 2rem;
+  line-height: 1.65;
+}
+
+/* ── How it works ──────────────────────── */
+.howTo {
+  /* clear separation from any adjacent ad slots */
+}
+
+.stepList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  counter-reset: step;
+}
+
+.stepItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: #12151f;
+  border: 1px solid #1e2335;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.stepNum {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(79, 70, 229, 0.15);
+  border: 1px solid rgba(79, 70, 229, 0.35);
+  color: #818cf8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.35rem;
+}
+
+.stepDesc {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ── Features ──────────────────────────── */
+.features {
+  /* clear separation from any adjacent ad slots */
+}
+
+.featGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.featCard {
+  background: #12151f;
+  border: 1px solid #1e2335;
+  border-radius: 12px;
+  padding: 1.4rem 1.25rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.featCard:hover {
+  border-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.featIcon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.featName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #c7d2fe;
+  margin-bottom: 0.4rem;
+}
+
+.featDesc {
+  font-size: 0.83rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ── Supported languages ───────────────── */
+.languages {
+  /* clear separation from any adjacent ad slots */
+}
+
+.langGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.langTag {
+  background: #12151f;
+  border: 1px solid #1e2335;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.85rem;
+  border-radius: 6px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.langTag:hover {
+  border-color: #4f46e5;
+  color: #c7d2fe;
+}
+
+/* ── Disclaimer ────────────────────────── */
+.disclaimer {
+  background: #12151f;
+  border: 1px solid #1e2335;
+  border-left: 3px solid #4f46e5;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-size: 0.84rem;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+.disclaimer strong {
+  color: #94a3b8;
+}
+
+/* ── Responsive ────────────────────────── */
+@media (max-width: 960px) {
+  .editorSection {
+    grid-template-columns: 1fr;
+  }
+
+  .featGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    gap: 3rem;
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .stepList {
+    grid-template-columns: 1fr;
+  }
+
+  .featGrid {
+    grid-template-columns: 1fr;
+  }
+}

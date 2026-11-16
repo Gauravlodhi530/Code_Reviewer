@@ -1,0 +1,44 @@
+# robots.txt — AI Code Reviewer
+# https://code-reviewer-g.vercel.app
+
+# Allow all crawlers including AI/LLM bots
+User-agent: *
+Allow: /
+
+# AI-specific crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Sitemaps
+Sitemap: https://code-reviewer-g.vercel.app/sitemap.xml
+
+# LLM content files
+# https://code-reviewer-g.vercel.app/llms.txt
+# https://code-reviewer-g.vercel.app/llms-full.txt

@@ -1,0 +1,83 @@
+# AI Code Reviewer — Full Site Content
+
+## Home Page (/)
+
+**Headline:** Paste your code, get instant feedback
+
+**Description:** Our AI reviews your code for bugs, style issues, performance, and best practices — in seconds.
+
+### What the AI checks
+
+**Bug Detection**
+Spots potential runtime errors and logical bugs before they reach production.
+
+**Performance**
+Identifies slow patterns and suggests faster alternatives.
+
+**Code Style**
+Checks naming conventions, formatting, and readability.
+
+**Security**
+Flags common security vulnerabilities and unsafe practices such as XSS, SQL injection, CSRF, and insecure API usage.
+
+**Best Practices**
+Aligns your code with modern language idioms and conventions, including DRY and SOLID principles.
+
+**Refactoring Tips**
+Suggests how to simplify and clean up complex logic, reducing unnecessary complexity.
+
+---
+
+## About Page (/about)
+
+AI Code Reviewer is a free, browser-based tool that lets you paste any code snippet and receive instant, detailed feedback powered by a large language model.
+
+You write or paste code into the editor on the left. When you click Review Code, your snippet is sent securely to our backend API, which forwards it to an AI model. The model returns a structured review in Markdown, rendered on the right side of the screen.
+
+The AI understands most mainstream programming languages including JavaScript, TypeScript, Python, Java, C++, Go, Rust, PHP, Ruby, and more.
+
+We do not store your code after the review is returned. Snippets are transmitted over HTTPS and discarded once the AI response is delivered.
+
+---
+
+## Privacy Policy (/privacy)
+
+Last updated: November 2026
+
+**Information we collect:** Only the code snippet you submit for review. No name, email, or IP address beyond standard server infrastructure logging for rate-limiting.
+
+**How we use your data:** Code snippets are sent to Google Gemini AI API solely to generate the review response. We do not store your code on our servers after the response is returned.
+
+**Cookies:** Google AdSense cookies may be used for relevant ads. Users can opt out at adssettings.google.com.
+
+**Hosting:** Vercel hosts this site. Access logs are retained for up to 30 days.
+
+**Children:** Not directed at children under 13.
+
+---
+
+## Terms of Service (/terms)
+
+Last updated: November 2026
+
+You may use the Service for personal or commercial purposes. You must not submit code containing credentials or passwords. You must not use the Service to generate harmful or malicious code.
+
+You retain full ownership of the code you submit. AI-generated reviews are provided as-is. The Service is provided without warranties — do not rely solely on it for security-critical decisions.
+
+Governing law: India.
+
+---
+
+## API
+
+The public backend API endpoint is:
+
+POST https://code-reviewer-g.vercel.app/ai/get-review
+Content-Type: application/json
+
+Request body:
+{
+  "code": "<your code string here>"
+}
+
+Response: plain text Markdown string containing the structured code review.

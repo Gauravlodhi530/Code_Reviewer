@@ -1,0 +1,146 @@
+.footer {
+  border-top: 1px solid #1e2335;
+  background-color: #0a0d14;
+  margin-top: auto;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 2rem;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Brand */
+.brand {
+  flex: 1;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.brandName {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #818cf8;
+}
+
+.brandIcon {
+  font-size: 1.1rem;
+}
+
+.brandDesc {
+  font-size: 0.83rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* AdSense disclosure — must be visible, readable, honest */
+.adsDisclosure {
+  font-size: 0.75rem;
+  color: #334155;
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+.disclosureLink {
+  color: #475569;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.disclosureLink:hover {
+  color: #818cf8;
+}
+
+/* Nav columns */
+.cols {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.col {
+  min-width: 130px;
+}
+
+.colTitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.colLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #818cf8;
+}
+
+.socialIcon {
+  font-size: 0.9rem;
+}
+
+/* Bottom bar */
+.bottom {
+  border-top: 1px solid #1e2335;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.copy {
+  font-size: 0.78rem;
+  color: #334155;
+}
+
+.bottomRight {
+  font-size: 0.78rem;
+  color: #334155;
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .brand {
+    max-width: 100%;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "AI Code Reviewer",
+  "name_for_model": "ai_code_reviewer",
+  "description_for_human": "Paste any code snippet and receive an instant, detailed AI-powered code review covering bugs, performance, security, style, and best practices.",
+  "description_for_model": "AI Code Reviewer analyses code submitted by developers and returns a structured Markdown review. The review covers bug detection, performance bottlenecks, security vulnerabilities, code style, DRY/SOLID principles, refactoring suggestions, and documentation advice. It acts as a senior engineer with 7+ years of experience. To use it, POST the code string to https://code-reviewer-g.vercel.app/ai/get-review with JSON body {\"code\": \"<code>\"} and receive a Markdown review string in the response body.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://code-reviewer-g.vercel.app/.well-known/openapi.json"
+  },
+  "logo_url": "https://code-reviewer-g.vercel.app/vite.svg",
+  "contact_email": "gauravlodhi530@gmail.com",
+  "legal_info_url": "https://code-reviewer-g.vercel.app/terms"
+}
