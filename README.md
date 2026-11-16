@@ -114,7 +114,13 @@ npm install
 npm run dev           # runs on http://localhost:5173
 ```
 
-## Author
+## 🔧 Tech Stack
+
+- **Frontend:** React.js, Vite, PrismJS, Tailwind CSS
+- **Backend:** Node.js, Express, Axios
+- **AI Integration:** HuggingFace or any custom API endpoint (configurable in backend)
+
+## 🙋‍♂️ Author
 
 **Gaurav Lodhi**
 - Email: gauravlodhi530@gmail.com
